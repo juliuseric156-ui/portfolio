@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reproducible Analysis | Julius Eric Kwayu</title>
+<link rel="stylesheet" href="portfolio.css">
+<style>table{border-collapse:collapse;width:100%;text-align:left}th,td{padding:.6rem;border-bottom:1px solid var(--line)}.table-wrap{overflow:auto}</style>
+</head>
+<body>
+<header class="wrap bar"><a class="name" href="index.html#projects">Julius Eric Kwayu</a><a href="pharmacy_dashboard.html">Pharmacy dashboard</a></header>
+<main class="wrap methods">
+<h1>Reproducible analysis</h1>
+<p>Download the code and data extracts, then run the analysis with Python 3.10 or newer. No extra packages are required.</p>
+<p><a class="button" href="portfolio-analysis.zip" download>Download code and data</a></p>
+<h2>Pharmacy fulfillment and expiry</h2>
+<p>The SQL reproduces all six fulfillment rates shown on the dashboard, including zinc sulfate at 41.5% (39 of 94 units). The stock calculation also reproduces TZS 285,898 in expired stock and TZS 2,661,721 in stock due to expire within 90 days, at purchase cost.</p>
+<p>The extracts omit patient, staff, and visit records. The download includes a data dictionary and instructions. It reproduces the fulfillment and stock-value metrics.</p>
+<h2 id="supermarket">Supermarket forecast backtest</h2>
+<p>For each product, I compared a four-week trailing mean with the previous week's sales. I chose the model using eight earlier weekly predictions and evaluated both on four later weeks. Lower mean absolute error (MAE) is better.</p>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">Product</th><th scope="col">Previous-week MAE</th><th scope="col">Four-week mean MAE</th><th scope="col">Selected forecast</th></tr></thead>
+<tbody><tr><th scope="row">Black tea</th><td>5.25 units</td><td>3.62 units</td><td>7.50 units</td></tr>
+<tr><th scope="row">Laundry soap</th><td>3.50 units</td><td>3.62 units</td><td>8.25 units</td></tr>
+<tr><th scope="row">Rice</th><td>4.75 units</td><td>3.69 units</td><td>7.50 units</td></tr></tbody>
+</table></div>
+<p>The four-week mean won the earlier comparison for all three products and beat the baseline on the holdout for tea and rice. The baseline was slightly better for soap. The selected forecasts are for the week ending 29 November 2026 and are distinct from the original report's projections. Four holdout weeks give only a limited view of accuracy.</p>
+<p><a href="supermarket_backtest.csv">View weekly predictions and actuals (CSV)</a></p>
+</main>
+</body>
+</html>

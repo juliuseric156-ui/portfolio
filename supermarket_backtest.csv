@@ -1,0 +1,73 @@
+product,week_ending,phase,method,actual_units,forecast_units
+Rice (mchele),2026-08-30,selection,Previous week,12,4
+Rice (mchele),2026-09-06,selection,Previous week,10,12
+Rice (mchele),2026-09-13,selection,Previous week,2,10
+Rice (mchele),2026-09-20,selection,Previous week,6,2
+Rice (mchele),2026-09-27,selection,Previous week,4,6
+Rice (mchele),2026-10-04,selection,Previous week,5,4
+Rice (mchele),2026-10-11,selection,Previous week,4,5
+Rice (mchele),2026-10-18,selection,Previous week,5,4
+Rice (mchele),2026-10-25,holdout,Previous week,14,5
+Rice (mchele),2026-11-01,holdout,Previous week,5,14
+Rice (mchele),2026-11-08,holdout,Previous week,5,5
+Rice (mchele),2026-11-15,holdout,Previous week,6,5
+Rice (mchele),2026-08-30,selection,Four-week mean,12,9.5
+Rice (mchele),2026-09-06,selection,Four-week mean,10,8.75
+Rice (mchele),2026-09-13,selection,Four-week mean,2,8.75
+Rice (mchele),2026-09-20,selection,Four-week mean,6,7
+Rice (mchele),2026-09-27,selection,Four-week mean,4,7.5
+Rice (mchele),2026-10-04,selection,Four-week mean,5,5.5
+Rice (mchele),2026-10-11,selection,Four-week mean,4,4.25
+Rice (mchele),2026-10-18,selection,Four-week mean,5,4.75
+Rice (mchele),2026-10-25,holdout,Four-week mean,14,4.5
+Rice (mchele),2026-11-01,holdout,Four-week mean,5,7
+Rice (mchele),2026-11-08,holdout,Four-week mean,5,7
+Rice (mchele),2026-11-15,holdout,Four-week mean,6,7.25
+Laundry soap,2026-08-30,selection,Previous week,7,0
+Laundry soap,2026-09-06,selection,Previous week,9,7
+Laundry soap,2026-09-13,selection,Previous week,12,9
+Laundry soap,2026-09-20,selection,Previous week,9,12
+Laundry soap,2026-09-27,selection,Previous week,6,9
+Laundry soap,2026-10-04,selection,Previous week,0,6
+Laundry soap,2026-10-11,selection,Previous week,6,0
+Laundry soap,2026-10-18,selection,Previous week,4,6
+Laundry soap,2026-10-25,holdout,Previous week,6,4
+Laundry soap,2026-11-01,holdout,Previous week,5,6
+Laundry soap,2026-11-08,holdout,Previous week,6,5
+Laundry soap,2026-11-15,holdout,Previous week,16,6
+Laundry soap,2026-08-30,selection,Four-week mean,7,7.25
+Laundry soap,2026-09-06,selection,Four-week mean,9,3
+Laundry soap,2026-09-13,selection,Four-week mean,12,4
+Laundry soap,2026-09-20,selection,Four-week mean,9,7
+Laundry soap,2026-09-27,selection,Four-week mean,6,9.25
+Laundry soap,2026-10-04,selection,Four-week mean,0,9
+Laundry soap,2026-10-11,selection,Four-week mean,6,6.75
+Laundry soap,2026-10-18,selection,Four-week mean,4,5.25
+Laundry soap,2026-10-25,holdout,Four-week mean,6,4
+Laundry soap,2026-11-01,holdout,Four-week mean,5,4
+Laundry soap,2026-11-08,holdout,Four-week mean,6,5.25
+Laundry soap,2026-11-15,holdout,Four-week mean,16,5.25
+Black tea (chai),2026-08-30,selection,Previous week,3,9
+Black tea (chai),2026-09-06,selection,Previous week,13,3
+Black tea (chai),2026-09-13,selection,Previous week,7,13
+Black tea (chai),2026-09-20,selection,Previous week,22,7
+Black tea (chai),2026-09-27,selection,Previous week,5,22
+Black tea (chai),2026-10-04,selection,Previous week,3,5
+Black tea (chai),2026-10-11,selection,Previous week,8,3
+Black tea (chai),2026-10-18,selection,Previous week,4,8
+Black tea (chai),2026-10-25,holdout,Previous week,12,4
+Black tea (chai),2026-11-01,holdout,Previous week,4,12
+Black tea (chai),2026-11-08,holdout,Previous week,5,4
+Black tea (chai),2026-11-15,holdout,Previous week,9,5
+Black tea (chai),2026-08-30,selection,Four-week mean,3,8
+Black tea (chai),2026-09-06,selection,Four-week mean,13,8.5
+Black tea (chai),2026-09-13,selection,Four-week mean,7,8
+Black tea (chai),2026-09-20,selection,Four-week mean,22,8
+Black tea (chai),2026-09-27,selection,Four-week mean,5,11.25
+Black tea (chai),2026-10-04,selection,Four-week mean,3,11.75
+Black tea (chai),2026-10-11,selection,Four-week mean,8,9.25
+Black tea (chai),2026-10-18,selection,Four-week mean,4,9.5
+Black tea (chai),2026-10-25,holdout,Four-week mean,12,5
+Black tea (chai),2026-11-01,holdout,Four-week mean,4,6.75
+Black tea (chai),2026-11-08,holdout,Four-week mean,5,7
+Black tea (chai),2026-11-15,holdout,Four-week mean,9,6.25
