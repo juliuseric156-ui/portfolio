@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pharmacy Analysis Methods | Julius Eric Kwayu</title>
+<link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+<header class="wrap bar"><a class="name" href="index.html#projects">Julius Eric Kwayu</a><a href="pharmacy_dashboard.html">Open dashboard</a></header>
+<main class="wrap methods">
+<p class="label">Hospital Pharmacy Analysis</p>
+<h1>Methods and SQL sample</h1>
+<p>The dashboard measures fulfillment, flags stock expiry risk, and estimates gross profit from dispensing records.</p>
+<h2>From records to metrics</h2>
+<ol>
+<li><strong>Fulfillment.</strong> Sum dispensing records per prescription item before matching them to prescriptions. Keep items with no recorded dispense in the denominator. Cap fulfilled units at the prescribed quantity, then divide fulfilled units by prescribed units for each medicine.</li>
+<li><strong>Quality checks.</strong> Compare recorded statuses with prescribed and dispensed quantities. Flag quantities above the prescription, even though the fulfillment rate caps them. A same-day first dispense can still leave some units outstanding.</li>
+<li><strong>Inventory and gross profit.</strong> Group remaining stock by expiry window and value it at batch purchase cost. Estimate gross profit by subtracting the purchase cost of dispensed units from recorded charges.</li>
+<li><strong>Reorder review.</strong> Apply the last 30 days of dispensing pace to batches in expiry order. The pace is an assumption and may change.</li>
+</ol>
+<h2>Run the fulfillment example</h2>
+<p>The SQL sample uses fictional records to demonstrate the metric independently of the dashboard’s source data. It covers a split fill, an unfilled item, and an over-dispensed item.</p>
+<p><a href="pharmacy-sample.sql" download>Download the SQLite sample</a></p>
+<p>In a terminal with SQLite installed, run this command from the folder containing the downloaded file.</p>
+<pre><code>sqlite3 -header -column :memory: &lt; pharmacy-sample.sql</code></pre>
+<p>Expected results are 60.0% fulfillment for cetirizine and 66.7% for amoxicillin. Amoxicillin has one flagged over-dispensed item.</p>
+<h2>Sample data dictionary</h2>
+<ul>
+<li><code>prescription_items</code> has one row per prescribed item, identified by <code>item_id</code>, with its medicine and prescribed units.</li>
+<li><code>dispensing</code> has one row per dispensing event, identified by <code>dispense_id</code>. Multiple events can reference the same <code>item_id</code>.</li>
+</ul>
+</main>
+</body>
+</html>

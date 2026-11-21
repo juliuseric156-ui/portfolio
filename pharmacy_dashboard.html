@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hospital Pharmacy Analysis</title>
+<style>
+* { box-sizing: border-box }
+body { margin: 0; background: #eef4f5; color: #142b36; font: 16px/1.5 system-ui, sans-serif }
+main { max-width: 1000px; margin: auto; padding: 32px 16px }
+h1 { margin: 0; font-size: clamp(2rem,5vw,3.3rem); line-height: 1.1 }
+header { padding: 18px 6px }
+section { margin: 16px 0; padding: clamp(14px,3vw,26px); border: 1px solid #cbdcde; border-radius: 14px; background: white }
+h2 { margin: 0; font-size: 1.3rem }
+p, small { color: #425b67 }
+ol { list-style: none; margin: 0; padding: 0 8px 0 0; max-height: 350px; overflow: auto }
+li { padding: 8px 0; border-top: 1px solid #e9eff0 }
+.row { display: grid; grid-template-columns: minmax(120px, 1fr) minmax(40px, 1.5fr) auto; gap: 10px; align-items: center }
+.track { position: relative; height: 16px; background: #e7f1f0; overflow: hidden; border-radius: 4px }
+.bar, .baseline { position: absolute; height: 100%; background: #087b71 }
+.baseline { width: 1px; background: #334d56 }
+.loss { background: #a63e36 }
+b { font-variant-numeric: tabular-nums }
+.pie-layout { display: flex; align-items: center; gap: 24px; flex-wrap: wrap }
+.pie { width: 175px; aspect-ratio: 1; border-radius: 50% }
+.legend { display: grid; gap: 8px }
+.swatch { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 8px }
+.trend { width: 100%; display: block; font: 13px system-ui; fill: #425b67 }
+details { margin-top: 8px }
+@media(max-width:460px) {
+  .row { grid-template-columns: 1fr auto }
+  .track { grid-row: 2; grid-column: 1 / -1 }
+}
+</style></head><body><main>
+<header><h1>Hospital Pharmacy Analysis</h1>
+<p>Prescription fulfillment, expiry risk, and estimated gross profit · Reporting cutoff November 19, 2026</p></header>
+<section><h2>1. Prescription fulfillment by medicine</h2><p>Dispensed units count up to the quantity prescribed for each item.</p><ol tabindex="0" aria-label="Chart values">
+        <li><div class="row"><strong>Zinc sulfate</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:41.4894%"></i>
+        </div><b>41.5%</b></div>
+        <small>39 of 94 units fulfilled · 55 outstanding · 13 items</small></li>
+        <li><div class="row"><strong>Oral rehydration salts (ORS)</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:42.7711%"></i>
+        </div><b>42.8%</b></div>
+        <small>71 of 166 units fulfilled · 95 outstanding · 15 items</small></li>
+        <li><div class="row"><strong>Ferrous sulfate</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:54.6610%"></i>
+        </div><b>54.7%</b></div>
+        <small>129 of 236 units fulfilled · 107 outstanding · 24 items</small></li>
+        <li><div class="row"><strong>Cetirizine</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:57.5581%"></i>
+        </div><b>57.6%</b></div>
+        <small>198 of 344 units fulfilled · 146 outstanding · 28 items</small></li>
+        <li><div class="row"><strong>Amoxicillin</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:60.4762%"></i>
+        </div><b>60.5%</b></div>
+        <small>127 of 210 units fulfilled · 83 outstanding · 26 items</small></li>
+        <li><div class="row"><strong>Paracetamol</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:68.1818%"></i>
+        </div><b>68.2%</b></div>
+        <small>135 of 198 units fulfilled · 63 outstanding · 20 items</small></li></ol></section><section><h2>2. Age of outstanding prescription items</h2><p>Oldest items first. Scroll to see every item with units outstanding.</p><ol tabindex="0" aria-label="Chart values">
+        <li><div class="row"><strong>Cetirizine · RI00003</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:100.0000%"></i>
+        </div><b>119 days</b></div>
+        <small>9 units outstanding · prescribed 2026-07-23</small></li>
+        <li><div class="row"><strong>Cetirizine · RI00004</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:100.0000%"></i>
+        </div><b>119 days</b></div>
+        <small>7 units outstanding · prescribed 2026-07-23</small></li>
+        <li><div class="row"><strong>Amoxicillin · RI00007</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:99.1597%"></i>
+        </div><b>118 days</b></div>
+        <small>9 units outstanding · prescribed 2026-07-24</small></li>
+        <li><div class="row"><strong>Amoxicillin · RI00008</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:96.6387%"></i>
+        </div><b>115 days</b></div>
+        <small>2 units outstanding · prescribed 2026-07-27</small></li>
+        <li><div class="row"><strong>Amoxicillin · RI00009</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:94.9580%"></i>
+        </div><b>113 days</b></div>
+        <small>7 units outstanding · prescribed 2026-07-29</small></li>
+        <li><div class="row"><strong>Zinc sulfate · RI00010</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:94.1176%"></i>
+        </div><b>112 days</b></div>
+        <small>5 units outstanding · prescribed 2026-07-30</small></li>
+        <li><div class="row"><strong>Cetirizine · RI00011</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:94.1176%"></i>
+        </div><b>112 days</b></div>
+        <small>15 units outstanding · prescribed 2026-07-30</small></li>
+        <li><div class="row"><strong>Amoxicillin · RI00013</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:91.5966%"></i>
+        </div><b>109 days</b></div>
+        <small>3 units outstanding · prescribed 2026-08-02</small></li>
+        <li><div class="row"><strong>Oral rehydration salts (ORS) · RI00014</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:90.7563%"></i>
+        </div><b>108 days</b></div>
+        <small>19 units outstanding · prescribed 2026-08-03</small></li>
+        <li><div class="row"><strong>Zinc sulfate · RI00017</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:82.3529%"></i>
+        </div><b>98 days</b></div>
+        <small>11 units outstanding · prescribed 2026-08-13</small></li>
+        <li><div class="row"><strong>Cetirizine · RI00019</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:79.8319%"></i>
+        </div><b>95 days</b></div>
+        <small>8 units outstanding · prescribed 2026-08-16</small></li>
+        <li><div class="row"><strong>Zinc sulfate · RI00020</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:78.9916%"></i>
+        </div><b>94 days</b></div>
+        <small>9 units outstanding · prescribed 2026-08-17</small></li>
+        <li><div class="row"><strong>Ferrous sulfate · RI00021</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:78.9916%"></i>
+        </div><b>94 days</b></div>
+        <small>11 units outstanding · prescribed 2026-08-17</small></li>
+        <li><div class="row"><strong>Oral rehydration salts (ORS) · RI00024</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:77.3109%"></i>
+        </div><b>92 days</b></div>
+        <small>4 units outstanding · prescribed 2026-08-19</small></li>
+        <li><div class="row"><strong>Amoxicillin · RI00027</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:73.9496%"></i>
+        </div><b>88 days</b></div>
+        <small>4 units outstanding · prescribed 2026-08-23</small></li>
+        <li><div class="row"><strong>Cetirizine · RI00028</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:73.1092%"></i>
+        </div><b>87 days</b></div>
+        <small>13 units outstanding · prescribed 2026-08-24</small></li>
+        <li><div class="row"><strong>Amoxicillin · RI00029</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:73.1092%"></i>
+        </div><b>87 days</b></div>
+        <small>13 units outstanding · prescribed 2026-08-24</small></li>
+        <li><div class="row"><strong>Amoxicillin · RI00031</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:68.9076%"></i>
+        </div><b>82 days</b></div>
+        <small>3 units outstanding · prescribed 2026-08-29</small></li>
+        <li><div class="row"><strong>Cetirizine · RI00032</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:68.9076%"></i>
+        </div><b>82 days</b></div>
+        <small>7 units outstanding · prescribed 2026-08-29</small></li>
+        <li><div class="row"><strong>Zinc sulfate · RI00033</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:68.9076%"></i>
+        </div><b>82 days</b></div>
+        <small>3 units outstanding · prescribed 2026-08-29</small></li>
+        <li><div class="row"><strong>Cetirizine · RI00034</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:68.9076%"></i>
+        </div><b>82 days</b></div>
+        <small>7 units outstanding · prescribed 2026-08-29</small></li>
+        <li><div class="row"><strong>Zinc sulfate · RI00035</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:68.0672%"></i>
+        </div><b>81 days</b></div>
+        <small>5 units outstanding · prescribed 2026-08-30</small></li>
+        <li><div class="row"><strong>Oral rehydration salts (ORS) · RI00036</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:67.2269%"></i>
+        </div><b>80 days</b></div>
+        <small>13 units outstanding · prescribed 2026-08-31</small></li>
+        <li><div class="row"><strong>Oral rehydration salts (ORS) · RI00038</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:65.5462%"></i>
+        </div><b>78 days</b></div>
+        <small>8 units outstanding · prescribed 2026-09-02</small></li>
+        <li><div class="row"><strong>Ferrous sulfate · RI00039</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:65.5462%"></i>
+        </div><b>78 days</b></div>
+        <small>8 units outstanding · prescribed 2026-09-02</small></li>
+        <li><div class="row"><strong>Ferrous sulfate · RI00040</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:63.8655%"></i>
+        </div><b>76 days</b></div>
+        <small>6 units outstanding · prescribed 2026-09-04</small></li>
+        <li><div class="row"><strong>Amoxicillin · RI00041</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:63.8655%"></i>
+        </div><b>76 days</b></div>
+        <small>6 units outstanding · prescribed 2026-09-04</small></li>
+        <li><div class="row"><strong>Cetirizine · RI00044</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:63.8655%"></i>
+        </div><b>76 days</b></div>
+        <small>8 units outstanding · prescribed 2026-09-04</small></li>
+        <li><div class="row"><strong>Amoxicillin · RI00045</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:63.8655%"></i>
+        </div><b>76 days</b></div>
+        <small>9 units outstanding · prescribed 2026-09-04</small></li>
+        <li><div class="row"><strong>Cetirizine · RI00047</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:62.1849%"></i>
+        </div><b>74 days</b></div>
+        <small>5 units outstanding · prescribed 2026-09-06</small></li>
+        <li><div class="row"><strong>Ferrous sulfate · RI00048</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:62.1849%"></i>
+        </div><b>74 days</b></div>
+        <small>4 units outstanding · prescribed 2026-09-06</small></li>
+        <li><div class="row"><strong>Paracetamol · RI00049</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:60.5042%"></i>
+        </div><b>72 days</b></div>
+        <small>5 units outstanding · prescribed 2026-09-08</small></li>
+        <li><div class="row"><strong>Ferrous sulfate · RI00051</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:60.5042%"></i>
+        </div><b>72 days</b></div>
+        <small>3 units outstanding · prescribed 2026-09-08</small></li>
+        <li><div class="row"><strong>Cetirizine · RI00052</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:60.5042%"></i>
+        </div><b>72 days</b></div>
+        <small>7 units outstanding · prescribed 2026-09-08</small></li>
+        <li><div class="row"><strong>Cetirizine · RI00055</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:55.4622%"></i>
+        </div><b>66 days</b></div>
+        <small>8 units outstanding · prescribed 2026-09-14</small></li>
+        <li><div class="row"><strong>Cetirizine · RI00056</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:55.4622%"></i>
+        </div><b>66 days</b></div>
+        <small>7 units outstanding · prescribed 2026-09-14</small></li>
+        <li><div class="row"><strong>Ferrous sulfate · RI00059</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:51.2605%"></i>
+        </div><b>61 days</b></div>
+        <small>6 units outstanding · prescribed 2026-09-19</small></li>
+        <li><div class="row"><strong>Zinc sulfate · RI00060</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:51.2605%"></i>
+        </div><b>61 days</b></div>
+        <small>5 units outstanding · prescribed 2026-09-19</small></li>
+        <li><div class="row"><strong>Paracetamol · RI00061</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:48.7395%"></i>
+        </div><b>58 days</b></div>
+        <small>2 units outstanding · prescribed 2026-09-22</small></li>
+        <li><div class="row"><strong>Ferrous sulfate · RI00062</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:46.2185%"></i>
+        </div><b>55 days</b></div>
+        <small>7 units outstanding · prescribed 2026-09-25</small></li>
+        <li><div class="row"><strong>Ferrous sulfate · RI00065</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:43.6975%"></i>
+        </div><b>52 days</b></div>
+        <small>3 units outstanding · prescribed 2026-09-28</small></li>
+        <li><div class="row"><strong>Zinc sulfate · RI00066</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:43.6975%"></i>
+        </div><b>52 days</b></div>
+        <small>3 units outstanding · prescribed 2026-09-28</small></li>
+        <li><div class="row"><strong>Cetirizine · RI00067</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:42.0168%"></i>
+        </div><b>50 days</b></div>
+        <small>16 units outstanding · prescribed 2026-09-30</small></li>
+        <li><div class="row"><strong>Ferrous sulfate · RI00070</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:38.6555%"></i>
+        </div><b>46 days</b></div>
+        <small>7 units outstanding · prescribed 2026-10-04</small></li>
+        <li><div class="row"><strong>Oral rehydration salts (ORS) · RI00072</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:37.8151%"></i>
+        </div><b>45 days</b></div>
+        <small>2 units outstanding · prescribed 2026-10-05</small></li>
+        <li><div class="row"><strong>Amoxicillin · RI00073</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:37.8151%"></i>
+        </div><b>45 days</b></div>
+        <small>2 units outstanding · prescribed 2026-10-05</small></li>
+        <li><div class="row"><strong>Amoxicillin · RI00076</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:31.9328%"></i>
+        </div><b>38 days</b></div>
+        <small>1 units outstanding · prescribed 2026-10-12</small></li>
+        <li><div class="row"><strong>Oral rehydration salts (ORS) · RI00077</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:31.9328%"></i>
+        </div><b>38 days</b></div>
+        <small>8 units outstanding · prescribed 2026-10-12</small></li>
+        <li><div class="row"><strong>Zinc sulfate · RI00080</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:30.2521%"></i>
+        </div><b>36 days</b></div>
+        <small>2 units outstanding · prescribed 2026-10-14</small></li>
+        <li><div class="row"><strong>Paracetamol · RI00081</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:30.2521%"></i>
+        </div><b>36 days</b></div>
+        <small>20 units outstanding · prescribed 2026-10-14</small></li>
+        <li><div class="row"><strong>Amoxicillin · RI00082</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:30.2521%"></i>
+        </div><b>36 days</b></div>
+        <small>4 units outstanding · prescribed 2026-10-14</small></li>
+        <li><div class="row"><strong>Paracetamol · RI00085</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:29.4118%"></i>
+        </div><b>35 days</b></div>
+        <small>5 units outstanding · prescribed 2026-10-15</small></li>
+        <li><div class="row"><strong>Cetirizine · RI00086</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:29.4118%"></i>
+        </div><b>35 days</b></div>
+        <small>2 units outstanding · prescribed 2026-10-15</small></li>
+        <li><div class="row"><strong>Cetirizine · RI00087</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:29.4118%"></i>
+        </div><b>35 days</b></div>
+        <small>2 units outstanding · prescribed 2026-10-15</small></li>
+        <li><div class="row"><strong>Ferrous sulfate · RI00088</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:26.0504%"></i>
+        </div><b>31 days</b></div>
+        <small>6 units outstanding · prescribed 2026-10-19</small></li>
+        <li><div class="row"><strong>Amoxicillin · RI00089</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:26.0504%"></i>
+        </div><b>31 days</b></div>
+        <small>3 units outstanding · prescribed 2026-10-19</small></li>
+        <li><div class="row"><strong>Oral rehydration salts (ORS) · RI00092</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:24.3697%"></i>
+        </div><b>29 days</b></div>
+        <small>4 units outstanding · prescribed 2026-10-21</small></li>
+        <li><div class="row"><strong>Ferrous sulfate · RI00093</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:24.3697%"></i>
+        </div><b>29 days</b></div>
+        <small>6 units outstanding · prescribed 2026-10-21</small></li>
+        <li><div class="row"><strong>Amoxicillin · RI00096</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:21.0084%"></i>
+        </div><b>25 days</b></div>
+        <small>2 units outstanding · prescribed 2026-10-25</small></li>
+        <li><div class="row"><strong>Oral rehydration salts (ORS) · RI00097</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:21.0084%"></i>
+        </div><b>25 days</b></div>
+        <small>11 units outstanding · prescribed 2026-10-25</small></li>
+        <li><div class="row"><strong>Paracetamol · RI00099</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:20.1681%"></i>
+        </div><b>24 days</b></div>
+        <small>9 units outstanding · prescribed 2026-10-26</small></li>
+        <li><div class="row"><strong>Cetirizine · RI00100</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:17.6471%"></i>
+        </div><b>21 days</b></div>
+        <small>16 units outstanding · prescribed 2026-10-29</small></li>
+        <li><div class="row"><strong>Ferrous sulfate · RI00101</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:17.6471%"></i>
+        </div><b>21 days</b></div>
+        <small>7 units outstanding · prescribed 2026-10-29</small></li>
+        <li><div class="row"><strong>Ferrous sulfate · RI00104</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:11.7647%"></i>
+        </div><b>14 days</b></div>
+        <small>6 units outstanding · prescribed 2026-11-05</small></li>
+        <li><div class="row"><strong>Amoxicillin · RI00106</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:9.2437%"></i>
+        </div><b>11 days</b></div>
+        <small>7 units outstanding · prescribed 2026-11-08</small></li>
+        <li><div class="row"><strong>Ferrous sulfate · RI00107</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:9.2437%"></i>
+        </div><b>11 days</b></div>
+        <small>8 units outstanding · prescribed 2026-11-08</small></li>
+        <li><div class="row"><strong>Oral rehydration salts (ORS) · RI00108</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:9.2437%"></i>
+        </div><b>11 days</b></div>
+        <small>12 units outstanding · prescribed 2026-11-08</small></li>
+        <li><div class="row"><strong>Amoxicillin · RI00110</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:8.4034%"></i>
+        </div><b>10 days</b></div>
+        <small>4 units outstanding · prescribed 2026-11-09</small></li>
+        <li><div class="row"><strong>Cetirizine · RI00111</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:8.4034%"></i>
+        </div><b>10 days</b></div>
+        <small>9 units outstanding · prescribed 2026-11-09</small></li>
+        <li><div class="row"><strong>Paracetamol · RI00112</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:7.5630%"></i>
+        </div><b>9 days</b></div>
+        <small>8 units outstanding · prescribed 2026-11-10</small></li>
+        <li><div class="row"><strong>Oral rehydration salts (ORS) · RI00113</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:7.5630%"></i>
+        </div><b>9 days</b></div>
+        <small>5 units outstanding · prescribed 2026-11-10</small></li>
+        <li><div class="row"><strong>Paracetamol · RI00114</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:4.2017%"></i>
+        </div><b>5 days</b></div>
+        <small>4 units outstanding · prescribed 2026-11-14</small></li>
+        <li><div class="row"><strong>Paracetamol · RI00115</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:4.2017%"></i>
+        </div><b>5 days</b></div>
+        <small>7 units outstanding · prescribed 2026-11-14</small></li>
+        <li><div class="row"><strong>Oral rehydration salts (ORS) · RI00116</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:4.2017%"></i>
+        </div><b>5 days</b></div>
+        <small>9 units outstanding · prescribed 2026-11-14</small></li>
+        <li><div class="row"><strong>Zinc sulfate · RI00118</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:3.3613%"></i>
+        </div><b>4 days</b></div>
+        <small>4 units outstanding · prescribed 2026-11-15</small></li>
+        <li><div class="row"><strong>Zinc sulfate · RI00119</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:2.5210%"></i>
+        </div><b>3 days</b></div>
+        <small>8 units outstanding · prescribed 2026-11-16</small></li>
+        <li><div class="row"><strong>Paracetamol · RI00120</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:2.5210%"></i>
+        </div><b>3 days</b></div>
+        <small>3 units outstanding · prescribed 2026-11-16</small></li>
+        <li><div class="row"><strong>Amoxicillin · RI00123</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:0.0000%"></i>
+        </div><b>0 days</b></div>
+        <small>4 units outstanding · prescribed 2026-11-19</small></li>
+        <li><div class="row"><strong>Ferrous sulfate · RI00124</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:0.0000%"></i>
+        </div><b>0 days</b></div>
+        <small>19 units outstanding · prescribed 2026-11-19</small></li></ol></section><section><h2>3. Time to first recorded dispensing</h2><p>Median 0 days across 83 items with a recorded dispense.</p><ol tabindex="0" aria-label="Chart values">
+        <li><div class="row"><strong>Same day</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:100.0000%"></i>
+        </div><b>83 items</b></div>
+        <small>100.0% of dispensed items</small></li>
+        <li><div class="row"><strong>1–2 days</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:0.0000%"></i>
+        </div><b>0 items</b></div>
+        <small>0.0% of dispensed items</small></li>
+        <li><div class="row"><strong>3–7 days</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:0.0000%"></i>
+        </div><b>0 items</b></div>
+        <small>0.0% of dispensed items</small></li>
+        <li><div class="row"><strong>8+ days</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:0.0000%"></i>
+        </div><b>0 items</b></div>
+        <small>0.0% of dispensed items</small></li></ol></section><section><h2>4. Purchase value of stock by expiry window</h2><p>Batch details list the remaining units and expiry date.</p><ol tabindex="0" aria-label="Chart values">
+        <li><div class="row"><strong>Expired</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:10.7411%"></i>
+        </div><b>285,898 TZS</b></div>
+        <small>LOT-0101: 133 units · 2026-10-05 | LOT-0201: 352 units · 2026-10-05 | LOT-0301: 157 units · 2026-10-05 | LOT-0401: 255 units · 2026-10-05 | LOT-0501: 231 units · 2026-10-05 | LOT-0601: 399 units · 2026-10-05</small></li>
+        <li><div class="row"><strong>Expires in 0–90 days</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:100.0000%"></i>
+        </div><b>2,661,721 TZS</b></div>
+        <small>LOT-0102: 1,922 units · 2026-12-07 | LOT-0202: 1,981 units · 2026-12-07 | LOT-0302: 1,967 units · 2026-12-07 | LOT-0402: 1,911 units · 2026-12-07 | LOT-0502: 1,968 units · 2026-12-07 | LOT-0602: 1,979 units · 2026-12-07</small></li></ol></section><section><h2>5. Estimated gross profit by medicine</h2><p>Recorded charges minus the batch purchase cost of units dispensed. Charges are used as recorded.</p><ol tabindex="0" aria-label="Chart values">
+        <li><div class="row"><strong>Cetirizine</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:100.0000%"></i>
+        </div><b>11,435 TZS</b></div>
+        <small>49,215 TZS charged · 37,780 TZS batch purchase cost</small></li>
+        <li><div class="row"><strong>Amoxicillin</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:84.5824%"></i>
+        </div><b>9,672 TZS</b></div>
+        <small>41,774 TZS charged · 32,102 TZS batch purchase cost</small></li>
+        <li><div class="row"><strong>Oral rehydration salts (ORS)</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:60.3148%"></i>
+        </div><b>6,897 TZS</b></div>
+        <small>29,819 TZS charged · 22,922 TZS batch purchase cost</small></li>
+        <li><div class="row"><strong>Ferrous sulfate</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:50.2143%"></i>
+        </div><b>5,742 TZS</b></div>
+        <small>24,645 TZS charged · 18,903 TZS batch purchase cost</small></li>
+        <li><div class="row"><strong>Paracetamol</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:40.7433%"></i>
+        </div><b>4,659 TZS</b></div>
+        <small>19,893 TZS charged · 15,234 TZS batch purchase cost</small></li>
+        <li><div class="row"><strong>Zinc sulfate</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:13.2750%"></i>
+        </div><b>1,518 TZS</b></div>
+        <small>6,531 TZS charged · 5,013 TZS batch purchase cost</small></li></ol></section><section><h2>6. Batches to review before reordering</h2><p>Ranks projected unsold stock at purchase cost. The estimate applies the last 30 days of dispensing pace and allocates demand to the earliest-expiring batches first.</p><ol tabindex="0" aria-label="Chart values">
+        <li><div class="row"><strong>Oral rehydration salts (ORS) · LOT-0202</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:100.0000%"></i>
+        </div><b>1,017,206 TZS</b></div>
+        <small>1,979 of 1,981 units projected unsold · 4 units dispensed in 30 days · expires 2026-12-07</small></li>
+        <li><div class="row"><strong>Amoxicillin · LOT-0302</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:56.0343%"></i>
+        </div><b>569,984 TZS</b></div>
+        <small>1,952 of 1,967 units projected unsold · 26 units dispensed in 30 days · expires 2026-12-07</small></li>
+        <li><div class="row"><strong>Cetirizine · LOT-0402</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:33.7446%"></i>
+        </div><b>343,252 TZS</b></div>
+        <small>1,886 of 1,911 units projected unsold · 42 units dispensed in 30 days · expires 2026-12-07</small></li>
+        <li><div class="row"><strong>Ferrous sulfate · LOT-0502</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:25.5225%"></i>
+        </div><b>259,616 TZS</b></div>
+        <small>1,952 of 1,968 units projected unsold · 27 units dispensed in 30 days · expires 2026-12-07</small></li>
+        <li><div class="row"><strong>Paracetamol · LOT-0102</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:24.1985%"></i>
+        </div><b>246,149 TZS</b></div>
+        <small>1,879 of 1,922 units projected unsold · 73 units dispensed in 30 days · expires 2026-12-07</small></li>
+        <li><div class="row"><strong>Zinc sulfate · LOT-0602</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:20.3558%"></i>
+        </div><b>207,060 TZS</b></div>
+        <small>1,972 of 1,979 units projected unsold · 12 units dispensed in 30 days · expires 2026-12-07</small></li></ol></section><section><h2>7. Dispensing status discrepancies</h2><p>Flags quantity and status disagreements, plus items with more units dispensed than prescribed.</p><ol tabindex="0" aria-label="Chart values">
+        <li><div class="row"><strong>Fully dispensed</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:0.0000%"></i>
+        </div><b>0 items</b></div>
+        <small>0 of 47 items flagged</small></li>
+        <li><div class="row"><strong>Partly dispensed</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:0.0000%"></i>
+        </div><b>0 items</b></div>
+        <small>0 of 36 items flagged</small></li>
+        <li><div class="row"><strong>Pending</strong>
+        <div class="track" aria-hidden="true">
+          <i class="baseline" style="left:0.0000%"></i>
+          <i class="bar " style="left:0.0000%;width:0.0000%"></i>
+        </div><b>0 items</b></div>
+        <small>0 of 43 items flagged</small></li></ol></section><section><h2>Recorded dispensing status</h2><p>Share of prescription items by the status recorded in the source.</p><div class="pie-layout"><div class="pie" aria-hidden="true" style="background:conic-gradient(#087b71 0.00000000% 37.30158730%,#c2791c 37.30158730% 65.87301587%,#526eaa 65.87301587% 100.00000000%)"></div><div class="legend"><div><span class="swatch" style="background:#087b71"></span>Fully dispensed <strong>47 (37.3%)</strong></div><div><span class="swatch" style="background:#c2791c"></span>Partly dispensed <strong>36 (28.6%)</strong></div><div><span class="swatch" style="background:#526eaa"></span>Pending <strong>43 (34.1%)</strong></div></div></div></section>
+    <section><h2>Historical daily dispensing</h2><p>Recorded units dispensed per day. Days without dispensing records show zero.</p>
+      <svg class="trend" viewBox="0 0 755 255" role="img" aria-label="Historical daily dispensing">
+        <line x1="73" x2="715" y1="215" y2="215" stroke="#d7e5e7"/><text x="65" y="219" text-anchor="end">0.0</text><line x1="73" x2="715" y1="165.75" y2="165.75" stroke="#d7e5e7"/><text x="65" y="169.75" text-anchor="end">15.5</text><line x1="73" x2="715" y1="116.5" y2="116.5" stroke="#d7e5e7"/><text x="65" y="120.5" text-anchor="end">31.0</text><line x1="73" x2="715" y1="67.25" y2="67.25" stroke="#d7e5e7"/><text x="65" y="71.25" text-anchor="end">46.5</text><line x1="73" x2="715" y1="18" y2="18" stroke="#d7e5e7"/><text x="65" y="22" text-anchor="end">62.0</text><text x="73.00" y="238" text-anchor="middle">23 Jul</text><text x="396.70" y="238" text-anchor="middle">21 Sep</text><text x="715.00" y="238" text-anchor="middle">19 Nov</text>
+        <polyline points="73.00,18.00 78.39,189.58 83.79,215.00 89.18,215.00 94.58,215.00 99.97,215.00 105.37,192.76 110.76,215.00 116.16,215.00 121.55,202.29 126.95,205.47 132.34,215.00 137.74,215.00 143.13,215.00 148.53,173.69 153.92,215.00 159.32,215.00 164.71,215.00 170.11,215.00 175.50,215.00 180.90,215.00 186.29,215.00 191.69,154.63 197.08,215.00 202.48,189.58 207.87,215.00 213.27,106.97 218.66,202.29 224.06,215.00 229.45,157.81 234.85,215.00 240.24,202.29 245.64,215.00 251.03,215.00 256.43,215.00 261.82,215.00 267.22,189.58 272.61,189.58 278.01,199.11 283.40,215.00 288.80,180.05 294.19,167.34 299.59,215.00 304.98,100.61 310.38,176.87 315.77,189.58 321.17,215.00 326.56,154.63 331.96,215.00 337.35,215.00 342.75,215.00 348.14,215.00 353.54,215.00 358.93,119.68 364.33,215.00 369.72,215.00 375.12,154.63 380.51,215.00 385.91,199.11 391.30,215.00 396.70,215.00 402.09,208.65 407.49,215.00 412.88,215.00 418.28,215.00 423.67,167.34 429.07,215.00 434.46,199.11 439.86,215.00 445.25,215.00 450.65,215.00 456.04,122.85 461.44,215.00 466.83,215.00 472.23,164.16 477.62,141.92 483.02,215.00 488.41,215.00 493.81,215.00 499.20,215.00 504.60,215.00 509.99,186.40 515.39,138.74 520.78,148.27 526.18,195.94 531.57,215.00 536.97,215.00 542.36,215.00 547.76,199.11 553.15,215.00 558.55,122.85 563.94,215.00 569.34,129.21 574.73,215.00 580.13,208.65 585.52,186.40 590.92,215.00 596.31,215.00 601.71,215.00 607.10,215.00 612.50,167.34 617.89,215.00 623.29,215.00 628.68,215.00 634.08,215.00 639.47,199.11 644.87,186.40 650.26,215.00 655.66,192.76 661.05,148.27 666.45,215.00 671.84,215.00 677.24,215.00 682.63,215.00 688.03,180.05 693.42,205.47 698.82,151.45 704.21,215.00 709.61,215.00 715.00,132.39" fill="none" stroke="#087b71" stroke-width="3"/>
+      </svg>
+      <small>Units summed across medicines</small>
+      <details><summary>View chart values</summary>
+        <ol><li>2026-07-23 · 62.0 units</li><li>2026-07-24 · 8.0 units</li><li>2026-07-25 · 0.0 units</li><li>2026-07-26 · 0.0 units</li><li>2026-07-27 · 0.0 units</li><li>2026-07-28 · 0.0 units</li><li>2026-07-29 · 7.0 units</li><li>2026-07-30 · 0.0 units</li><li>2026-07-31 · 0.0 units</li><li>2026-08-01 · 4.0 units</li><li>2026-08-02 · 3.0 units</li><li>2026-08-03 · 0.0 units</li><li>2026-08-04 · 0.0 units</li><li>2026-08-05 · 0.0 units</li><li>2026-08-06 · 13.0 units</li><li>2026-08-07 · 0.0 units</li><li>2026-08-08 · 0.0 units</li><li>2026-08-09 · 0.0 units</li><li>2026-08-10 · 0.0 units</li><li>2026-08-11 · 0.0 units</li><li>2026-08-12 · 0.0 units</li><li>2026-08-13 · 0.0 units</li><li>2026-08-14 · 19.0 units</li><li>2026-08-15 · 0.0 units</li><li>2026-08-16 · 8.0 units</li><li>2026-08-17 · 0.0 units</li><li>2026-08-18 · 34.0 units</li><li>2026-08-19 · 4.0 units</li><li>2026-08-20 · 0.0 units</li><li>2026-08-21 · 18.0 units</li><li>2026-08-22 · 0.0 units</li><li>2026-08-23 · 4.0 units</li><li>2026-08-24 · 0.0 units</li><li>2026-08-25 · 0.0 units</li><li>2026-08-26 · 0.0 units</li><li>2026-08-27 · 0.0 units</li><li>2026-08-28 · 8.0 units</li><li>2026-08-29 · 8.0 units</li><li>2026-08-30 · 5.0 units</li><li>2026-08-31 · 0.0 units</li><li>2026-09-01 · 11.0 units</li><li>2026-09-02 · 15.0 units</li><li>2026-09-03 · 0.0 units</li><li>2026-09-04 · 36.0 units</li><li>2026-09-05 · 12.0 units</li><li>2026-09-06 · 8.0 units</li><li>2026-09-07 · 0.0 units</li><li>2026-09-08 · 19.0 units</li><li>2026-09-09 · 0.0 units</li><li>2026-09-10 · 0.0 units</li><li>2026-09-11 · 0.0 units</li><li>2026-09-12 · 0.0 units</li><li>2026-09-13 · 0.0 units</li><li>2026-09-14 · 30.0 units</li><li>2026-09-15 · 0.0 units</li><li>2026-09-16 · 0.0 units</li><li>2026-09-17 · 19.0 units</li><li>2026-09-18 · 0.0 units</li><li>2026-09-19 · 5.0 units</li><li>2026-09-20 · 0.0 units</li><li>2026-09-21 · 0.0 units</li><li>2026-09-22 · 2.0 units</li><li>2026-09-23 · 0.0 units</li><li>2026-09-24 · 0.0 units</li><li>2026-09-25 · 0.0 units</li><li>2026-09-26 · 15.0 units</li><li>2026-09-27 · 0.0 units</li><li>2026-09-28 · 5.0 units</li><li>2026-09-29 · 0.0 units</li><li>2026-09-30 · 0.0 units</li><li>2026-10-01 · 0.0 units</li><li>2026-10-02 · 29.0 units</li><li>2026-10-03 · 0.0 units</li><li>2026-10-04 · 0.0 units</li><li>2026-10-05 · 16.0 units</li><li>2026-10-06 · 23.0 units</li><li>2026-10-07 · 0.0 units</li><li>2026-10-08 · 0.0 units</li><li>2026-10-09 · 0.0 units</li><li>2026-10-10 · 0.0 units</li><li>2026-10-11 · 0.0 units</li><li>2026-10-12 · 9.0 units</li><li>2026-10-13 · 24.0 units</li><li>2026-10-14 · 21.0 units</li><li>2026-10-15 · 6.0 units</li><li>2026-10-16 · 0.0 units</li><li>2026-10-17 · 0.0 units</li><li>2026-10-18 · 0.0 units</li><li>2026-10-19 · 5.0 units</li><li>2026-10-20 · 0.0 units</li><li>2026-10-21 · 29.0 units</li><li>2026-10-22 · 0.0 units</li><li>2026-10-23 · 27.0 units</li><li>2026-10-24 · 0.0 units</li><li>2026-10-25 · 2.0 units</li><li>2026-10-26 · 9.0 units</li><li>2026-10-27 · 0.0 units</li><li>2026-10-28 · 0.0 units</li><li>2026-10-29 · 0.0 units</li><li>2026-10-30 · 0.0 units</li><li>2026-10-31 · 15.0 units</li><li>2026-11-01 · 0.0 units</li><li>2026-11-02 · 0.0 units</li><li>2026-11-03 · 0.0 units</li><li>2026-11-04 · 0.0 units</li><li>2026-11-05 · 5.0 units</li><li>2026-11-06 · 9.0 units</li><li>2026-11-07 · 0.0 units</li><li>2026-11-08 · 7.0 units</li><li>2026-11-09 · 21.0 units</li><li>2026-11-10 · 0.0 units</li><li>2026-11-11 · 0.0 units</li><li>2026-11-12 · 0.0 units</li><li>2026-11-13 · 0.0 units</li><li>2026-11-14 · 11.0 units</li><li>2026-11-15 · 3.0 units</li><li>2026-11-16 · 20.0 units</li><li>2026-11-17 · 0.0 units</li><li>2026-11-18 · 0.0 units</li><li>2026-11-19 · 26.0 units</li></ol>
+      </details>
+    </section>
+    
+    <section><h2>30-day dispensing forecast</h2><p>Projects 184 total units over the next 30 days at the recent average of 6.1 units per day. The line starts at zero on the reporting cutoff and shows cumulative future units.</p>
+      <svg class="trend" viewBox="0 0 755 255" role="img" aria-label="30-day dispensing forecast">
+        <line x1="73" x2="715" y1="215" y2="215" stroke="#d7e5e7"/><text x="65" y="219" text-anchor="end">0.0</text><line x1="73" x2="715" y1="165.75" y2="165.75" stroke="#d7e5e7"/><text x="65" y="169.75" text-anchor="end">46.0</text><line x1="73" x2="715" y1="116.5" y2="116.5" stroke="#d7e5e7"/><text x="65" y="120.5" text-anchor="end">92.0</text><line x1="73" x2="715" y1="67.25" y2="67.25" stroke="#d7e5e7"/><text x="65" y="71.25" text-anchor="end">138.0</text><line x1="73" x2="715" y1="18" y2="18" stroke="#d7e5e7"/><text x="65" y="22" text-anchor="end">184.0</text><text x="73.00" y="238" text-anchor="middle">19 Nov</text><text x="394.00" y="238" text-anchor="middle">04 Dec</text><text x="715.00" y="238" text-anchor="middle">19 Dec</text>
+        <polyline points="73.00,215.00 94.40,208.43 115.80,201.87 137.20,195.30 158.60,188.73 180.00,182.17 201.40,175.60 222.80,169.03 244.20,162.47 265.60,155.90 287.00,149.33 308.40,142.77 329.80,136.20 351.20,129.63 372.60,123.07 394.00,116.50 415.40,109.93 436.80,103.37 458.20,96.80 479.60,90.23 501.00,83.67 522.40,77.10 543.80,70.53 565.20,63.97 586.60,57.40 608.00,50.83 629.40,44.27 650.80,37.70 672.20,31.13 693.60,24.57 715.00,18.00" fill="none" stroke="#855312" stroke-width="3" stroke-dasharray="8 5"/>
+      </svg>
+      <small>Units summed across medicines</small>
+      <details><summary>View chart values</summary>
+        <ol><li>2026-11-19 · 0.0 units</li><li>2026-11-20 · 6.1 units</li><li>2026-11-21 · 12.3 units</li><li>2026-11-22 · 18.4 units</li><li>2026-11-23 · 24.5 units</li><li>2026-11-24 · 30.7 units</li><li>2026-11-25 · 36.8 units</li><li>2026-11-26 · 42.9 units</li><li>2026-11-27 · 49.1 units</li><li>2026-11-28 · 55.2 units</li><li>2026-11-29 · 61.3 units</li><li>2026-11-30 · 67.5 units</li><li>2026-12-01 · 73.6 units</li><li>2026-12-02 · 79.7 units</li><li>2026-12-03 · 85.9 units</li><li>2026-12-04 · 92.0 units</li><li>2026-12-05 · 98.1 units</li><li>2026-12-06 · 104.3 units</li><li>2026-12-07 · 110.4 units</li><li>2026-12-08 · 116.5 units</li><li>2026-12-09 · 122.7 units</li><li>2026-12-10 · 128.8 units</li><li>2026-12-11 · 134.9 units</li><li>2026-12-12 · 141.1 units</li><li>2026-12-13 · 147.2 units</li><li>2026-12-14 · 153.3 units</li><li>2026-12-15 · 159.5 units</li><li>2026-12-16 · 165.6 units</li><li>2026-12-17 · 171.7 units</li><li>2026-12-18 · 177.9 units</li><li>2026-12-19 · 184.0 units</li></ol>
+      </details>
+    </section>
+    
+</main></body></html>

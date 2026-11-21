@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Julius Eric Kwayu, junior data analyst in Tanzania. Explore pharmacy operations, supermarket demand, and electronics sales projects.">
+<title>Julius Eric Kwayu | Data Analytics Portfolio</title>
+<link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+<header class="wrap bar">
+<a class="name" href="index.html">Julius Eric Kwayu</a>
+<nav aria-label="Main navigation"><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
+</header>
+<main class="wrap">
+<section class="hero" aria-labelledby="intro">
+<p class="label">Junior Data Analyst · Tanzania</p>
+<h1 id="intro">Data analysis for sales and inventory decisions.</h1>
+<p class="intro">I use Python, SQL, Excel, and dashboards to investigate sales trends, customer behavior, and inventory risks.</p>
+<a class="button" href="#projects">Explore my work</a>
+</section>
+
+<section id="projects" aria-labelledby="project-title">
+<h2 id="project-title">Selected projects</h2>
+<article class="featured panel">
+<div>
+<p class="label">Featured project · Pharmacy operations</p>
+<h3>Hospital Pharmacy Analysis</h3>
+<p>Which medicines have the most unfilled prescriptions, and which batches should be reviewed before reordering?</p>
+<p>Across the six medicines shown, zinc sulfate had the lowest fulfillment rate. Only 39 of 94 prescribed units were dispensed. The dashboard also identified stock already past expiry and ranked batches at risk of remaining unsold.</p>
+<div class="actions"><a class="button" href="pharmacy_dashboard.html">Open dashboard</a><a href="pharmacy-methods.html">Methods and SQL sample</a></div>
+</div>
+<figure aria-label="Prescription fulfillment rates for six medicines">
+<figcaption>Prescription fulfillment by medicine</figcaption>
+<ul class="chart">
+<li><span>Zinc sulfate</span><span class="track"><span style="--rate:41.5%"></span></span><b>41.5%</b></li>
+<li><span>Oral rehydration salts</span><span class="track"><span style="--rate:42.8%"></span></span><b>42.8%</b></li>
+<li><span>Ferrous sulfate</span><span class="track"><span style="--rate:54.7%"></span></span><b>54.7%</b></li>
+<li><span>Cetirizine</span><span class="track"><span style="--rate:57.6%"></span></span><b>57.6%</b></li>
+<li><span>Amoxicillin</span><span class="track"><span style="--rate:60.5%"></span></span><b>60.5%</b></li>
+<li><span>Paracetamol</span><span class="track"><span style="--rate:68.2%"></span></span><b>68.2%</b></li>
+</ul>
+</figure>
+</article>
+
+<div class="grid">
+<article class="panel">
+<p class="label">Retail demand</p>
+<h3>Supermarket Sales &amp; Demand</h3>
+<p>Staples contributed 46.1% of recorded revenue. Sunflower cooking oil was the top individual product at TZS 507,395. Use these results to review which products need closer stock monitoring.</p>
+<details><summary>Methods and limitations</summary><p>The report aggregates workbook revenue by product and category, groups units sold into complete Monday–Sunday weeks, and checks 100 transactions using 1.5×IQR limits. It presents a next-full-week projection for black tea, laundry soap, and rice. The report does not document the forecast model or its historical accuracy.</p></details>
+<a href="supermarket-sales-analysis.pdf">View supermarket report (PDF)</a>
+</article>
+<article class="panel">
+<p class="label">Sales and conversion</p>
+<h3>Electronics Shop Sales</h3>
+<p>The five top-selling products accounted for 67% of 523 units across 100 orders. Use the ranking and channel breakdown to decide which products to review first for stock availability.</p>
+<details><summary>Methods and limitations</summary><p>Revenue is quantity ordered multiplied by unit price and then summed by product. The next-quarter mix assumes Q4 2023 shares carry forward. Inquiry and social account fields are simulated. The report gives no ad spend or currency, so it cannot estimate advertising cost per sale or return on ad spend.</p></details>
+<a href="electronics-sales-dashboard.pdf">View electronics dashboard (PDF)</a>
+</article>
+</div>
+</section>
+<section id="contact" class="contact" aria-labelledby="contact-title">
+<div><h2 id="contact-title">Contact</h2><p>I’m open to junior data analyst roles.</p></div>
+<a class="button" href="mailto:juliuseric15@gmail.com">Email me</a>
+</section>
+</main>
+</body>
+</html>
